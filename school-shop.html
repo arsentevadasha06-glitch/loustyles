@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>School Shop — покупки для всей семьи</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{background:#e6eadf;font-family:Arial,sans-serif;color:#223a32;display:grid;place-items:center}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:default}#stage{width:1280px;height:800px;flex-shrink:0;position:absolute;transform-origin:center;background:#f8f6ee;padding:28px 32px;overflow:hidden}header{height:86px;display:flex;align-items:flex-start;justify-content:space-between}.brand{display:flex;gap:12px;align-items:center}.brand-icon{background:#244c3e;color:white;border-radius:16px;padding:12px;font-size:28px}h1{font-size:30px;letter-spacing:-1px;margin:0 0 6px}p{margin:0}.sub{font-size:13px;color:#67756e}.top-actions{display:flex;gap:10px;align-items:center}.soft{border:1px solid #d9ded3;border-radius:12px;background:transparent;padding:11px 15px;color:#355547;font-size:13px}.progress{font-size:13px;background:#e8eddf;padding:12px 18px;border-radius:30px;font-weight:bold}.layout{display:grid;grid-template-columns:176px 1fr 300px;gap:20px;height:612px}.family{background:#e9edde;border-radius:22px;padding:18px 12px}.eyebrow{font-size:10px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#778170}.family h2{font-size:19px;margin:8px 7px 16px}.person{height:72px;display:flex;align-items:center;gap:10px;padding:9px;margin:5px 0;border:1px solid transparent;border-radius:15px;opacity:.57}.person.active{background:#fffef9;border-color:#bec9a9;opacity:1;box-shadow:0 4px 8px #233c3210}.person.done{opacity:1;color:#4c7460}.face{font-size:28px;background:#dce4d0;border-radius:50%;width:42px;height:42px;display:grid;place-items:center}.person b{font-size:15px;display:block}.person small{font-size:10px;display:block;margin-top:4px}.middle{display:flex;flex-direction:column;gap:17px}.mission{height:175px;border-radius:22px;background:#f5e3a7;padding:19px 23px;position:relative}.mission h2{font-size:25px;margin:6px 0 10px;letter-spacing:-.6px}.mission p{font-size:12px;color:#736338}.shopping-list{display:flex;gap:8px;margin-top:13px}.need{background:#fffbeb;border:1px solid #e5cf8a;border-radius:11px;padding:9px 11px;font-size:13px;display:flex;gap:8px;align-items:center}.need.checked{background:#e2edcc;border-color:#b0c38b}.need strong{font-size:17px}.shop{border:1px solid #e1e3d7;border-radius:22px;padding:18px;flex:1;background:#fffef9}.shop-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.shop-title h2{font-size:19px;margin:0}.shop-title span{font-size:11px;color:#7e887c}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.product{border:1px solid #e4e5da;border-radius:15px;background:#f7f7ef;height:160px;padding:9px;display:flex;flex-direction:column;align-items:center;position:relative}.product:nth-child(2n){background:#edf2e9}.product .art{height:68px;width:82px}.product b{font-size:13px;margin:6px 0 9px}.buy{display:flex;align-items:center;justify-content:space-between;width:100%;font-size:15px;font-weight:bold}.add{border:0;border-radius:9px;background:#28513f;color:white;width:31px;height:29px;font-size:22px;line-height:20px}.add:hover{background:#46785a}.tip{background:#eee9dc;border-radius:15px;padding:17px 11px;color:#727860;font-size:12px;line-height:1.6;display:flex;flex-direction:column;justify-content:center;text-align:center}.tip span{font-size:27px;margin-bottom:5px}.cart{background:white;border:1px solid #e1e3d7;border-radius:22px;padding:21px;display:flex;flex-direction:column}.cart-head{display:flex;justify-content:space-between;align-items:center}.cart h2{margin:0;font-size:23px}.clear{border:0;background:none;color:#7b867b;font-size:11px;text-decoration:underline}.cart-label{font-size:12px;color:#7b867b;margin-top:8px}.cart-items{height:263px;margin-top:14px;border-top:1px dashed #dce0d5;padding-top:10px}.empty{height:100%;display:grid;place-content:center;text-align:center;color:#8b9789;gap:12px;font-size:13px;line-height:1.6}.empty span{font-size:40px}.cart-row{height:34px;display:flex;align-items:center;gap:5px;font-size:12px}.cart-row .name{flex:1}.qtybtn{border:1px solid #dce2d5;background:#f5f7ee;border-radius:6px;width:23px;height:23px;padding:0;color:#36563c}.qty{width:19px;text-align:center;font-weight:bold}.cost{width:31px;text-align:right;font-weight:bold}.total{border-top:1px dashed #dce0d5;display:flex;justify-content:space-between;padding-top:15px;align-items:center}.total span{font-size:15px}.total strong{font-size:30px}.checkout label{display:block;font-size:12px;margin:14px 0 8px}.checkout input{width:100%;height:43px;border:1px solid #cbd5c5;border-radius:10px;padding:10px 12px;outline:none}.checkout input:focus{border-color:#385f41;box-shadow:0 0 0 3px #e3eddb}.pay{width:100%;height:44px;border:0;background:#28513f;color:white;border-radius:11px;font-weight:bold;margin-top:9px}.message{font-size:12px;line-height:1.4;color:#a35b31;margin-top:8px;min-height:34px}footer{height:46px;display:flex;align-items:end;justify-content:space-between;color:#7c8778;font-size:12px}.dots{letter-spacing:5px;color:#627950}.overlay{position:absolute;inset:0;background:#20382cb3;display:grid;place-items:center;z-index:10}.overlay[hidden]{display:none}.modal{background:#fffdf4;width:660px;border-radius:28px;padding:32px;text-align:center;box-shadow:0 25px 100px #15291c55}.modal h2{font-size:30px;margin:14px 0}.modal p{line-height:1.6;color:#71806e}.modal .pay{max-width:330px;margin-top:22px;height:48px}.big-icon{font-size:60px}.numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:20px 0}.number{background:#edf2e4;border-radius:9px;padding:9px;text-align:left;font-size:14px}.number b{display:inline-block;width:25px;color:#78954d}button:focus-visible{outline:3px solid #e2ab3e;outline-offset:3px}
+</style>
+</head>
+<body>
+<main id="stage">
+<header><div class="brand"><div class="brand-icon">✎</div><div><h1>School Shop</h1><p class="sub">Маленький магазин · Большая семья · English practice</p></div></div><div class="top-actions"><button class="soft" id="help">Aa · Числа 1–20</button><button class="soft" id="restart">↻ Сначала</button><span class="progress" id="progress">0 / 6 покупок</span></div></header>
+<div class="layout">
+<aside class="family"><div class="eyebrow" style="margin-left:7px">Your family</div><h2>Для кого покупаем?</h2><div id="family"></div></aside>
+<section class="middle"><div class="mission"><div class="eyebrow">Shopping list <span id="step"></span></div><h2 id="mission-title"></h2><p>Собери ровно столько товаров, сколько указано в списке.</p><div class="shopping-list" id="list"></div></div>
+<section class="shop"><div class="shop-title"><h2>Выбирай школьные товары</h2><span>Цена за 1 штуку</span></div><div class="products" id="products"></div></section></section>
+<section class="cart"><div class="cart-head"><h2>My basket</h2><button class="clear" id="clear">Очистить</button></div><p class="cart-label" id="cart-label"></p><div class="cart-items" id="cart-items"></div><div class="total"><span>Total</span><strong id="total">£0</strong></div><form class="checkout" id="checkout" novalidate><label for="answer">Напиши сумму по-английски:</label><input id="answer" placeholder="Например: seven" autocomplete="off" spellcheck="false" aria-describedby="message"><button class="pay" type="submit">Pay · Оплатить →</button><p class="message" id="message" role="status" aria-live="polite"></p></form></section>
+</div>
+<footer><span>① Прочитай список &nbsp; → &nbsp; ② Собери корзину &nbsp; → &nbsp; ③ Напиши total словом</span><span class="dots" id="dots"></span><span>Learn. Shop. Smile. ✦</span></footer>
+<div class="overlay" id="overlay" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" id="modal"></section></div>
+</main>
+<script>
+const words=['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty'];
+const drawings={
+book:'<rect x="22" y="10" width="51" height="62" rx="5" fill="#e78b55"/><path d="M30 10v62" stroke="#bc613a" stroke-width="4"/><path d="M39 26h25M39 33h18" stroke="#fff4ce" stroke-width="3"/><path d="M30 65h43" stroke="#fff5d9" stroke-width="5"/>',
+pen:'<g transform="rotate(25 45 40)"><rect x="39" y="9" width="13" height="51" rx="4" fill="#568bb1"/><path d="M39 60l6 14 7-14" fill="#d5dce1"/><path d="M45 74v-5" stroke="#263e4d" stroke-width="2"/><path d="M51 16h5v24" fill="none" stroke="#274e6b" stroke-width="3"/></g>',
+pencil:'<g transform="rotate(25 45 40)"><path d="M38 20h16v41l-8 15-8-15z" fill="#e7b749"/><path d="M38 61h16l-8 15z" fill="#edcfa4"/><path d="M43 71h6l-3 5z" fill="#314b3d"/><rect x="38" y="8" width="16" height="13" rx="4" fill="#e79088"/><path d="M46 24v34" stroke="#f9df83" stroke-width="3"/></g>',
+'pencil case':'<rect x="9" y="26" width="73" height="37" rx="13" fill="#b2a5ca"/><path d="M13 36h64" stroke="#78648c" stroke-width="3"/><path d="M73 35v12" stroke="#e9d8b1" stroke-width="4"/><circle cx="28" cy="51" r="4" fill="#eee8f5"/>',
+rubber:'<g transform="rotate(-18 45 42)"><rect x="17" y="25" width="60" height="35" rx="7" fill="#edac9e"/><path d="M50 25h20q7 0 7 7v21q0 7-7 7H50z" fill="#b6c9cb"/><path d="M23 33h19" stroke="#f9d0bc" stroke-width="3"/></g>',
+ruler:'<g transform="rotate(-25 45 40)"><rect x="6" y="29" width="80" height="25" rx="3" fill="#e5bd65"/><path d="M16 30v13m10-13v8m10-8v13m10-13v8m10-8v13m10-13v8m10-8v13" stroke="#9e7937" stroke-width="2"/></g>',
+'school bag':'<path d="M35 22v-7q10-9 20 0v7" fill="none" stroke="#396c64" stroke-width="5"/><rect x="19" y="22" width="54" height="51" rx="14" fill="#6f9c85"/><path d="M22 29q25 18 48 0" fill="#89b39a"/><rect x="29" y="47" width="34" height="20" rx="5" fill="#e6c67e"/><path d="M30 53h32" stroke="#b2904f" stroke-width="2"/>'
+};
+const products=Object.keys(drawings).map((name,i)=>({name,price:[4,2,1,5,1,3,6][i]}));
+const family=[
+{name:'mother',face:'👩',order:{book:2,pen:2,'school bag':1}},
+{name:'father',face:'👨',order:{pencil:14,ruler:2}},
+{name:'sister',face:'👧',order:{rubber:5,'pencil case':1,book:1}},
+{name:'brother',face:'👦',order:{pen:3,pencil:4,ruler:2}},
+{name:'grandma',face:'👵',order:{book:2,rubber:6,'pencil case':1}},
+{name:'grandpa',face:'👴',order:{'school bag':2,pencil:5}}
+];
+let current=0,cart={},finished=false,lastFocus=null;
+const $=id=>document.getElementById(id);
+function total(){return products.reduce((s,p)=>s+(cart[p.name]||0)*p.price,0)}
+function matches(){return products.every(p=>(cart[p.name]||0)===(family[current].order[p.name]||0))}
+function art(name){return `<svg class="art" viewBox="0 0 92 82" aria-hidden="true">${drawings[name]}</svg>`}
+$('products').innerHTML=products.map((p,i)=>`<div class="product">${art(p.name)}<b>${p.name}</b><div class="buy"><span>£${p.price}</span><button class="add" data-add="${i}" aria-label="Добавить ${p.name}">+</button></div></div>`).join('')+'<div class="tip"><span>✦</span>Сначала список,<br>потом покупки!</div>';
+function render(){
+ $('family').innerHTML=family.map((f,i)=>`<div class="person ${i<current||finished?'done':i===current?'active':''}" ${i===current?'aria-current="step"':''}><span class="face">${f.face}</span><div><b>${f.name}</b><small>${i<current||finished?'✓ Оплачено':i===current?'Покупаем сейчас':'Ждёт своей очереди'}</small></div></div>`).join('');
+ $('mission-title').textContent=`Let's shop for ${family[current].name}!`;
+ $('step').textContent=`· ${current+1} / 6`;
+ $('list').innerHTML=Object.entries(family[current].order).map(([name,n])=>`<div class="need ${(cart[name]||0)===n?'checked':''}"><strong>${n}</strong><span>${name}<br><small>${words[n]}</small></span><span>${(cart[name]||0)===n?'✓':''}</span></div>`).join('');
+ $('cart-label').textContent=`Покупки для ${family[current].name}`;
+ $('cart-items').innerHTML=products.filter(p=>cart[p.name]).map(p=>`<div class="cart-row"><span class="name">${p.name}</span><button class="qtybtn" data-change="${p.name}" data-delta="-1" aria-label="Убрать ${p.name}">−</button><span class="qty">${cart[p.name]}</span><button class="qtybtn" data-change="${p.name}" data-delta="1" aria-label="Добавить ${p.name}">+</button><span class="cost">£${cart[p.name]*p.price}</span></div>`).join('')||'<div class="empty"><span>🧺</span>Здесь будут твои покупки.<br>Нажимай + на витрине.</div>';
+ $('total').textContent=`£${total()}`;
+ $('progress').textContent=`${finished?6:current} / 6 покупок`;
+ $('dots').textContent=family.map((_,i)=>i<current||finished?'●':'○').join('');
+}
+function change(name,delta){
+ if(finished)return;
+ if(delta>0&&total()+products.find(p=>p.name===name).price>20){$('message').textContent='Работаем с числами до 20. Убери лишнее и проверь список.';return}
+ cart[name]=Math.max(0,(cart[name]||0)+delta);$('answer').value='';$('message').textContent='';render();
+}
+$('products').addEventListener('click',e=>{const b=e.target.closest('[data-add]');if(b)change(products[+b.dataset.add].name,1)});
+$('cart-items').addEventListener('click',e=>{const b=e.target.closest('[data-change]');if(b)change(b.dataset.change,+b.dataset.delta)});
+$('clear').onclick=()=>{if(finished)return;cart={};$('answer').value='';$('message').textContent='';render()};
+function show(html){lastFocus=document.activeElement;$('modal').innerHTML=html;$('overlay').hidden=false;$('modal').querySelector('button').focus()}
+function close(){ $('overlay').hidden=true;if(lastFocus)lastFocus.focus()}
+function reset(){current=0;cart={};finished=false;$('answer').value='';$('message').textContent='';close();render()}
+$('restart').onclick=()=>show('<div class="big-icon">↻</div><h2 id="modal-title">Начать заново?</h2><p>Покупки всей семьи будут сброшены.</p><button class="pay" id="reset-yes">Да, начать сначала</button><br><button class="soft" id="cancel" style="margin-top:12px">Продолжить игру</button>');
+$('help').onclick=()=>show('<h2 id="modal-title">Numbers · 1–20</h2><p>Прочитай, запомни и вернись к покупкам.</p><div class="numbers">'+words.slice(1).map((w,i)=>`<div class="number"><b>${i+1}</b>${w}</div>`).join('')+'</div><button class="pay" id="close">Вернуться в магазин</button>');
+$('modal').addEventListener('click',e=>{
+ if(e.target.id==='close'||e.target.id==='cancel')close();
+ if(e.target.id==='reset-yes'||e.target.id==='again')reset();
+ if(e.target.id==='next'){current++;cart={};$('answer').value='';$('message').textContent='';close();render();$('products').querySelector('button').focus()}
+});
+$('checkout').onsubmit=e=>{
+ e.preventDefault();if(finished)return;
+ if(!matches()){$('message').textContent='Проверь список: нужны все указанные товары, в точном количестве, без лишних.';return}
+ const value=$('answer').value.trim().toLowerCase();
+ if(value!==words[total()]){$('message').textContent=value?'Пока неверно. Напиши Total одним английским словом. Подсказка — «Числа 1–20».':'Введи сумму по-английски, чтобы оплатить.';$('answer').focus();return}
+ const paid=total();finished=current===family.length-1;render();
+ show(`<div class="big-icon">${finished?'🏆':'🎉'}</div><h2 id="modal-title">${finished?'Well done!':'Payment successful!'}</h2><p>£${paid} = <strong>${words[paid]}</strong><br>${family[current].name}: всё куплено и оплачено.<br>${finished?'Ты собрал покупки для всей семьи!':'Теперь собираем новую корзину для '+family[current+1].name+'.'}</p><button class="pay" id="${finished?'again':'next'}">${finished?'Сыграть ещё раз':'Next: '+family[current+1].name+' →'}</button>`);
+};
+document.addEventListener('keydown',e=>{if($('overlay').hidden)return;const btns=[...$('modal').querySelectorAll('button')];if(e.key==='Escape'&&$('modal').querySelector('#close,#cancel'))close();if(e.key==='Tab'){const first=btns[0],last=btns[btns.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
+function resize(){const s=Math.min(innerWidth/1280,innerHeight/800);$('stage').style.transform=`scale(${s})`}
+addEventListener('resize',resize);resize();render();
+</script>
+</body>
+</html>
